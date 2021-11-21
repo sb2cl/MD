@@ -21,5 +21,11 @@ gmx mdrun -v -deffnm step6.2_equilibration
 gmx grompp -f step6.3_equilibration.mdp -o step6.3_equilibration.tpr -c step6.2_equilibration.gro -r step5_input.gro -p topol.top -n index.ndx
 gmx mdrun -v -deffnm step6.3_equilibration
 
-gmx grompp -f step6.4_equilibration.mdp -o step6.4_equilibration.tpr -c step6.3_equilibration.gro -r step5_input.gro -p topol.top -n index.ndx
-gmx mdrun -v -deffnm step6.4_equilibration
+`$ gmx grompp -f step6.4_equilibration.mdp -o step6.4_equilibration.tpr -c step6.3_equilibration.gro -r step5_input.gro -p topol.top -n index.ndx`
+`$ gmx mdrun -v -deffnm step6.4_equilibration`
+
+`$ gmx grompp -f step6.5_equilibration.mdp -o step6.5_equilibration.tpr -c step6.4_equilibration.gro -r step5_input.gro -p topol.top -n index.ndx`
+`$ gmx mdrun -v -deffnm step6.5_equilibration`
+
+`$ gmx grompp -f step6.6_equilibration.mdp -o step6.6_equilibration.tpr -c step6.5_equilibration.gro -r step5_input.gro -p topol.top -n index.ndx`
+`$ gmx mdrun -v -deffnm step6.6_equilibration`
