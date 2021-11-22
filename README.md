@@ -40,19 +40,11 @@ In the case that there is a problem during minimization using a single precision
 
 `$ gmx grompp -f step7_production.mdp -o step7_production.tpr -c step6.6_equilibration.gro -p topol.top -n index.ndx`
 
- gmx mdrun -v -deffnm step7_production -cpnum -ntmpi 1 -ntomp 16 -nsteps -1 -maxh 48 -cpt 60 -s step7_production.tpr
+ `$ gmx mdrun -v -deffnm step7_production -cpnum -ntmpi 1 -ntomp 16 -nsteps -1 -maxh 48 -cpt 60 -s step7_production.tpr`
  
+ `$ gmx mdrun -v -deffnm step7_production -cpnum -ntmpi 1 -ntomp 16 -nsteps -1 -maxh 48 -cpt 60 -s step7_production.tpr -cpi step7_production_stepXXX.cpt`
  
-set init = step5_input
-set rest_prefix = step5_input
-set mini_prefix = step6.0_minimization
-set equi_prefix = step6.%d_equilibration
-set prod_prefix = step7_production
-set prod_step   = step7
 
-
- gmx mdrun -v -deffnm step7_inf -cpnum -ntmpi 1 -ntomp 16 -nsteps -1 -maxh 48 -cpt 60 -s step7_inf.tpr -cpi step7_inf_stepXXXXXXXX.cpt
- 
  # Density
  
  gmx density -s step7_inf.tpr -f step7_inf.trr -o density_NN_Lum_out_200ns.xvg -d Z -sl 500 -b 0 -e 20000000 -xvg none -ng 3
