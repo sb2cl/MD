@@ -38,6 +38,19 @@ In the case that there is a problem during minimization using a single precision
 
 # Production
 
+`$ gmx grompp -f step7_production.mdp -o step7_production.tpr -c step6.6_equilibration.gro -p topol.top -n index.ndx`
+
+ gmx mdrun -v -deffnm step7_production -cpnum -ntmpi 1 -ntomp 16 -nsteps -1 -maxh 48 -cpt 60 -s step7_production.tpr
+ 
+ 
+set init = step5_input
+set rest_prefix = step5_input
+set mini_prefix = step6.0_minimization
+set equi_prefix = step6.%d_equilibration
+set prod_prefix = step7_production
+set prod_step   = step7
+
+
  gmx mdrun -v -deffnm step7_inf -cpnum -ntmpi 1 -ntomp 16 -nsteps -1 -maxh 48 -cpt 60 -s step7_inf.tpr -cpi step7_inf_stepXXXXXXXX.cpt
  
  # Density
