@@ -37,6 +37,7 @@ In the case that there is a problem during minimization using a single precision
 `$ gmx mdrun -v -deffnm step6.6_equilibration`
 
 # Production
+Before doing grompp, remember to change `nsteps                  = 100000000`, to set max time to 200ns.
 
 `$ gmx grompp -f step7_production.mdp -o step7_production.tpr -c step6.6_equilibration.gro -p topol.top -n index.ndx`
 
