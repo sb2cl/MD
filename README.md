@@ -49,6 +49,7 @@ Before doing grompp, remember to change `nsteps                  = 100000000`, t
  # Density
  
  gmx density -s step7_inf.tpr -f step7_inf.trr -o density_NN_Lum_out_200ns.xvg -d Z -sl 500 -b 0 -e 20000000 -xvg none -ng 3
+ And then the order is, Water, DOPC and mollecule
  
  # Trajectory
  gmx trjconv -f step7.trr -s step7.tpr -o Ptr_out_100_200ns.pdb  -b 100000 -e 200000 -skip 10000
