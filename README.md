@@ -2,6 +2,13 @@
 MD simulations of lipid bilayers and photosensible molecules
 
 # Procedure to obtain the CHARMM files
+## Bilayer
+1. Open PBD made by the ligand reader/modeler (ligandrm.pdb)
+2. Use the .rtf and .prm file in the residue folder
+3. Step1: 
+  a. Check the structure
+  b. Align principal direction
+  c. Translate 50 A or 0 depending on out ir in the bilayer.
 
 # Minimization
 In the case that there is a problem during minimization using a single precision of GROMACS, please try to use a double precision of GROMACS only for the minimization step.
