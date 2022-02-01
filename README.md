@@ -9,7 +9,7 @@ MD simulations of lipid bilayers and photosensible molecules
 3. Download the compressed file with the results, and check in the topology file LIG.rtf that the penalties are lower than 50.
 ## Bilayer
 1. Open PBD made by the ligand reader/modeler (ligandrm.pdb)
-2. Use the .rtf and .prm file in the residue folder
+2. Use the original mol2 file(.rtf and .prm file in the residue folder: sometimes does not work)
 4. Step1: 
   a. Check the structure
   b. Align principal direction
