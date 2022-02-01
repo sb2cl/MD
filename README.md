@@ -1,11 +1,16 @@
 # MD
 MD simulations of lipid bilayers and photosensible molecules
 
+
 # Procedure to obtain the CHARMM files
+## Ligand
+1. First we start the Ligand Reader & Modeler using the .mol2 file of the molecule.
+2. Select Make CGenFF topology, change the name and un-select Guess order
+3. Download the compressed file with the results, and check in the topology file LIG.rtf that the penalties are lower than 50.
 ## Bilayer
 1. Open PBD made by the ligand reader/modeler (ligandrm.pdb)
 2. Use the .rtf and .prm file in the residue folder
-3. Step1: 
+4. Step1: 
   a. Check the structure
   b. Align principal direction
   c. Translate 50 A or 0 depending on out ir in the bilayer.
