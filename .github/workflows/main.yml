@@ -32,6 +32,18 @@ jobs:
       - name: Run MATLAB Command
         uses: matlab-actions/run-command@v1.0.1
         with:
-          command: Density_Plot('last.xvg','OOPte','last')
+          command: addpath('script'),density_plot_last()
+          
+      - name: Commit changes, ready to push
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add *.png
+          git diff-index --quiet HEAD . || git commit -m "Update density plot"
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
 
 

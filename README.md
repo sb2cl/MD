@@ -1,6 +1,9 @@
 # MD
 MD simulations of lipid bilayers and photosensible molecules
 
+Here I will try to put info of the status plot showing next:
+
+![This is the density of the last simulation](density.png)
 
 # Procedure to obtain the CHARMM files
 ## Ligand
