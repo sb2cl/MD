@@ -1,6 +1,7 @@
 # MD
 MD simulations of lipid bilayers and photosensible molecules
 
+[This is the density of the last simulation](/script/density.png)
 
 # Procedure to obtain the CHARMM files
 ## Ligand
