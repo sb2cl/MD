@@ -1,4 +1,4 @@
-function Density_Plot_last
+function Density_Plot_last()
 %Density_Plot Function to plot the density resulting from MD simulations.
 %   This function plot the density from a gromacs density file executed
 %   like this:
@@ -24,7 +24,7 @@ Z = dataArray{:, 1};
 Molecule = dataArray{:, 4};
 DOPC = dataArray{:, 3};
 Water = dataArray{:, 2};
-oopte = smooth(Molecule);
+oopte = smooth(50*Molecule);
 Z_centered = Z - (max(Z)-min(Z))/2;
 Z = Z_centered;
 plot(Z,smooth(Water,'sgolay'),'DisplayName','Water','LineWidth',2);
@@ -34,6 +34,6 @@ plot(Z,oopte ,'DisplayName','Molecule','LineWidth',2);
 xlim([ min(Z) max(Z)]);
 box on;
 grid on;
-print -
+print -dpng -painters -r300 'density.png'
 end
 
