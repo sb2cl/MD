@@ -32,6 +32,6 @@ jobs:
       - name: Run MATLAB Command
         uses: matlab-actions/run-command@v1.0.1
         with:
-          command: addpath('script'),Density_Plot('last.xvg','OOPte','last')
+          command: addpath('script'),density_plot_last()
 
 
