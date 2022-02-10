@@ -61,17 +61,17 @@ Before doing grompp, remember to change `nsteps                  = 100000000`, t
  `$ gmx mdrun -v -deffnm step7_production -cpnum -ntmpi 1 -ntomp 16 -nsteps -1 -maxh 48 -cpt 60 -s step7_production.tpr -cpi step7_production_stepXXX.cpt`
  
 
- # Density
+# Density
  
- gmx density -s step7_inf.tpr -f step7_inf.trr -o density_NN_Lum_out_200ns.xvg -d Z -sl 500 -b 0 -e 20000000 -xvg none -ng 3
- And then the order is, Water, DOPC and mollecule
+ gmx density -s step7_production.tpr -f step7_production.trr -o density_OOPte_out_200ns.xvg -d Z -sl 500 -b 0 -e 20000000 -xvg none -ng 3
+ And then the order is, Water, DOPC and molecule
  
- # Trajectory
+# Trajectory
  gmx trjconv -f step7.trr -s step7.tpr -o Ptr_out_100_200ns.pdb  -b 100000 -e 200000 -skip 10000
  
   gmx trjconv -f step7_inf.trr -s step7_new150ns.tpr -n index.ndx -o Memb_out_18000ps.pdb  -dump 18000
   
   gmx trjconv -f step7_inf.trr -s step7_new150ns.tpr -n index.ndx -o Odecyl_end_200_Ptr_out.pdb  -b 190000 -e 200000
   
-  # Change Production configuration 
+# Change Production configuration 
   gmx grompp -f step7_production.mdp -c step7_new.tpr -o step7_new150ns.tpr -p topol.top -n index.ndx
