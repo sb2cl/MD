@@ -19,6 +19,15 @@ dataArray = textscan(fileID, formatSpec, 'Delimiter', '', 'WhiteSpace', '', 'Tex
 %% Close the text file.
 fclose(fileID);
 
+opts = delimitedTextImportOptions("NumVariables",2);
+opts.DataLines = [1, Inf];
+opts.Delimiter = ",";
+opts.VariableNames = ["Molecule", "IC"];
+opts.VariableTypes = ["string", "string"];
+data = readtable('last_data.dat', opts);
+
+
+
 %% Allocate imported array to column variable names
 Z = dataArray{:, 1};
 Molecule = dataArray{:, 4};
@@ -30,10 +39,16 @@ Z = Z_centered;
 plot(Z,smooth(Water,'sgolay'),'DisplayName','Water','LineWidth',2);
 hold on;
 plot(Z,smooth(DOPC,7,'sgolay'),'DisplayName','DOPC ','LineWidth',2);
-plot(Z,oopte ,'DisplayName','Molecule','LineWidth',2);
+plot(Z,oopte ,'DisplayName',data.Molecule(1),'LineWidth',2);
 xlim([ min(Z) max(Z)]);
 box on;
 grid on;
+legend 
+% Create xlabel
+xlabel('Z Coordinate (nm)','Interpreter','latex');
+% Create ylabel
+ylabel('Density ($kg \, m/{S^{-3}N}$)','Interpreter','latex');
+title(data.IC);
 print -dpng -painters -r300 'density.png'
 end
 
