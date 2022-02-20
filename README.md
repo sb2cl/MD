@@ -60,6 +60,8 @@ Before doing grompp, remember to change `nsteps                  = 100000000`, t
  
  `$ gmx mdrun -v -deffnm step7_production -cpnum -ntmpi 1 -ntomp 16 -nsteps -1 -maxh 48 -cpt 60 -s step7_production.tpr -cpi step7_production_stepXXX.cpt`
  
+ TO run in OS-Carraixet
+`gmx mdrun -v -deffnm step7_production -cpnum -nsteps -1 -maxh 48 -cpt 60 -s step7_production.tpr -cpi step7_production_stepXXX.cpt` 
 
 # Density
  
