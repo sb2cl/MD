@@ -75,6 +75,8 @@ Before doing grompp, remember to change `nsteps                  = 100000000`, t
  TO run in OS-Carraixet
 `gmx mdrun -v -deffnm step7_production -cpnum -nsteps -1 -maxh 48 -cpt 60 -s step7_production.tpr -cpi step7_production_stepXXX.cpt` 
 
+For execution up to 200ns.
+`gmx mdrun -v -deffnm step7_production -cpnum -cpt 60 -s step7_production.tpr -cpi step7_production_stepXXX.cpt
 # Density
  
  gmx density -s step7_production.tpr -f step7_production.trr -o density_OOPte_out_200ns.xvg -d Z -sl 500 -b 0 -e 20000000 -xvg none -ng 3
