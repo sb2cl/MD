@@ -13,17 +13,17 @@ Here I will try to put info of the status plot showing next:
 ## Bilayer
 1. Open PBD made by the ligand reader/modeler (ligandrm.pdb)
 2. Use the original mol2 file(.rtf and .prm file in the residue folder: sometimes does not work)
-Step1: 
+### Step1: 
   a. Check the structure
   b. Align principal direction
   c. Translate 50 A or 0 depending on out ir in the bilayer.
-Step 2: Lipid components
+### Step 2: Lipid components
   * Hidration number 50
   * Number of lipid components: 64 DOPC per leaflet
   * Show the system info button
-Step 3: 
+### Step 3: 
   * Change to NaCl and delete KCl. Calculate solvetn composition
-Step 4
+### Step 4:
 
 
 # Minimization
