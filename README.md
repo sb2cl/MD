@@ -11,12 +11,24 @@ Here I will try to put info of the status plot showing next:
 2. Select Make CGenFF topology, change the name and un-select Guess order
 3. Download the compressed file with the results, and check in the topology file LIG.rtf that the penalties are lower than 50.
 ## Bilayer
-1. Open PBD made by the ligand reader/modeler (ligandrm.pdb)
-2. Use the original mol2 file(.rtf and .prm file in the residue folder: sometimes does not work)
-4. Step1: 
-  a. Check the structure
-  b. Align principal direction
-  c. Translate 50 A or 0 depending on out ir in the bilayer.
+  * Open PBD made by the ligand reader/modeler (ligandrm.pdb)
+  * Use the original mol2 file(.rtf and .prm file in the residue folder: sometimes does not work)
+### Step1: 
+  * Check the structure
+  * Align principal direction
+  * Translate 50 A or 0 depending on out ir in the bilayer.
+### Step 2: Lipid components
+  * Hidration number 50
+  * Number of lipid components: 64 DOPC per leaflet
+  * Show the system info button
+### Step 3: 
+  * Change to NaCl and delete KCl. Calculate solvetn composition
+
+Next until 
+### Step 5
+  * GROMACS, NPT, 300K (Change)
+
+
 
 # Minimization
 In the case that there is a problem during minimization using a single precision of GROMACS, please try to use a double precision of GROMACS only for the minimization step.
@@ -63,6 +75,8 @@ Before doing grompp, remember to change `nsteps                  = 100000000`, t
  TO run in OS-Carraixet
 `gmx mdrun -v -deffnm step7_production -cpnum -nsteps -1 -maxh 48 -cpt 60 -s step7_production.tpr -cpi step7_production_stepXXX.cpt` 
 
+For execution up to 200ns.
+`gmx mdrun -v -deffnm step7_production -cpnum -cpt 60 -s step7_production.tpr -cpi step7_production_stepXXX.cpt
 # Density
  
  gmx density -s step7_production.tpr -f step7_production.trr -o density_OOPte_out_200ns.xvg -d Z -sl 500 -b 0 -e 20000000 -xvg none -ng 3
