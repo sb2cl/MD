@@ -91,3 +91,12 @@ For execution up to 200ns.
   
 # Change Production configuration 
   gmx grompp -f step7_production.mdp -c step7_new.tpr -o step7_new150ns.tpr -p topol.top -n index.ndx
+  
+# Upload xvg data to repo
+cp density_OCAP_in_200ns.xvg ../MD/script/last.xvg
+cd  ../MD/script/
+nano last_data.dat
+git pull
+git add .
+git commit -m 'OCAP 200ns in'
+git push origin
